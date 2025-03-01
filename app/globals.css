@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #1a1a1a; /* Dark Gray */
+  color: #ffffff; /* White */
+  padding-top: 4rem; /* Ensures content starts below a 64px fixed header */
+}
+
+
+/* Animations for rotating text */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Text Effect */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Glitter effect for project cards on hover */
+@keyframes glitter {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.glitter-effect {
+  background: linear-gradient(45deg, rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5), rgba(255, 255, 0, 0.5));
+  background-size: 400% 400%;
+  animation: glitter 1.5s linear infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.glitter-effect:hover {
+  background-position: 100% 100%;
+  animation: glitter 1s ease-in-out infinite;
+}
+
