@@ -1,23 +1,31 @@
 'use client';
 
 import './globals.css';
-import Image from 'next/image'; // Use next/image for image optimization
+import Image from 'next/image';
 import About from 'app/about/page';
 import Skills from 'app/components/Skills';
 import Projects from 'app/projects/page';
 import Contact from 'app/contact/page';
 import Achievements from 'app/achivements/page';
-const PhotoWithRadiumBorder = ({ src, alt, width, height }) => {
+
+interface PhotoWithRadiumBorderProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+const PhotoWithRadiumBorder: React.FC<PhotoWithRadiumBorderProps> = ({  alt, width, height }) => {
   return (
     <div className="photo-container">
       <style jsx>{`
         .photo-container {
           position: relative;
           display: inline-block;
-          padding: 10px; /* Space between the photo and the border */
+          padding: 10px; 
           background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff);
           background-size: 400% 400%;
-          border-radius: 50%; /* For circular borders */
+          border-radius: 50%; 
           animation: radium-glow 3s linear infinite;
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
@@ -25,7 +33,7 @@ const PhotoWithRadiumBorder = ({ src, alt, width, height }) => {
         .photo-container img {
           display: block;
           object-fit: cover;
-          border-radius: 50%; /* Circular image */
+          border-radius: 50%; 
           border: 5px solid transparent;
         }
 
@@ -42,13 +50,12 @@ const PhotoWithRadiumBorder = ({ src, alt, width, height }) => {
         }
       `}</style>
 
-      {/* Use Next.js Image component */}
       <Image
         src="/images/SaiPriyaImage.jpg"
         alt={alt}
         width={width}
         height={height}
-        className="rounded-full" // Use rounded-full for circular images
+        className="rounded-full"
       />
     </div>
   );
@@ -57,9 +64,7 @@ const PhotoWithRadiumBorder = ({ src, alt, width, height }) => {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-800 text-white p-8">
-      {/* Top Section: Photo, Name, Resume */}
       <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-12">
-        {/* Right Side: Glowing Photo */}
         <div className="lg:w-1/3 flex justify-center">
           <PhotoWithRadiumBorder
             src="/images/SaiPriyaImage.jpg"
@@ -69,14 +74,12 @@ export default function Home() {
           />
         </div>
 
-        {/* Left Side Content */}
         <div className="flex-1">
           <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
             Sai Priya Vuppala
           </h1>
           <p className="text-lg text-gray-300">Full Stack Developer | Tech Enthusiast</p>
 
-          {/* Effects Section */}
           <div className="text-2xl mt-6 font-bold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 animate-pulse">
               {"<Coder>"}
@@ -91,7 +94,6 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Social Links */}
           <div className="flex space-x-4 mt-6">
             <a
               href="https://www.linkedin.com/in/sai-priya-vuppala-730b2924b/"
@@ -124,7 +126,7 @@ export default function Home() {
           </div>
 
           <a
-            href ="/SaiPriyaResume.pdf"
+            href="/SaiPriyaResume.pdf"
             download
             className="mt-6 inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-700 px-6 py-2 rounded-full transition duration-300"
           >
@@ -133,7 +135,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Additional Sections */}
       <div className="mt-12 w-full mx-auto">
         <About />
       </div>

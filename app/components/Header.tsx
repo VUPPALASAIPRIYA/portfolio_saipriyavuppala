@@ -46,7 +46,7 @@ const Header = () => {
                 backgroundColor: "#1D3557", // Deep navy blue (classic color)
               }}
             >
-              Sai Priya's Portfolio
+              Sai Priya&apos;s Portfolio
             </div>
           </Link>
         </div>

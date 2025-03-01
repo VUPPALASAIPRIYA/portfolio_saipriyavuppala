@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-
 const About = () => {
   return (
     <section
@@ -20,7 +18,7 @@ const About = () => {
         <div className="flex justify-center items-center">
           <div className="w-full md:w-3/4 text-white space-y-6 p-8 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
             <p className="text-lg leading-relaxed">
-              I'm a third-year Computer Science and Engineering student with a specialization in Data Science. 
+              I&apos;m a third-year Computer Science and Engineering student with a specialization in Data Science. 
               I have hands-on experience in web and mobile app development using Spring Boot, MERN stack, Flutter, and Python. 
               As a mentor for the School of Data Science club, I am passionate about helping others and contributing to collaborative projects.
             </p>

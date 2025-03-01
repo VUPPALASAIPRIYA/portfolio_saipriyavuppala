@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import { useState } from "react";
 
 const Skills = () => {
-  const [borderColor, setBorderColor] = useState("rgb(0, 123, 255)"); // Initial border color
+  const [borderColor] = useState("rgb(0, 123, 255)"); // Initial border color
 
   return (
     <section
